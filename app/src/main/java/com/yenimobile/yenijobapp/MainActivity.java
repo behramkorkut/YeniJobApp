@@ -12,6 +12,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -52,6 +53,10 @@ public class MainActivity extends AppCompatActivity {
                     i.putExtra("Key1", "Third item"); //fake data too.
                     item = new JobWorkItem(i);
                     jobScheduler.enqueue(job,item);
+                }else {
+                    Toast.makeText(MainActivity.this,
+                            "sorry, needs Android Oreo for JobWorkItem",
+                            Toast.LENGTH_SHORT).show();
                 }
             }
         });
